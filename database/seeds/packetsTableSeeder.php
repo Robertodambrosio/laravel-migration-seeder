@@ -17,10 +17,10 @@ class packetsTableSeeder extends Seeder
             $NewPacket = new Packet();
             $NewPacket->departure = $faker->country();
             $NewPacket->destination= $faker->country();
-            $NewPacket->departure_date= $faker->date();
-            $NewPacket->return_date = $faker->date();
+            $NewPacket->departure_date= $faker->dateTimeThisMonth();
+            $NewPacket->return_date = $faker->dateTimeThisMonth('+10days');
             $NewPacket->people_nr= $faker->randomDigit();
-            $NewPacket->price = $faker->randomFloat(2, 50, 10000);
+            $NewPacket->price = $faker->randomFloat(2, 50, 1500);
             $NewPacket->save();
         }
     }
