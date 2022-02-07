@@ -15,11 +15,11 @@ class CreatePacketsTable extends Migration
     {
         Schema::create('packets', function (Blueprint $table) {
             $table->id();
-            $table->string("departure");
-            $table->string("destination");
+            $table->string("departure", 50);
+            $table->string("destination", 50);
             $table->date('departure_date');
             $table->date('return_date');
-            $table->tinyInteger('people_nr');
+            $table->tinyInteger('people_nr', 4);
             $table->float('price', 8, 2);
             $table->timestamps();
         });
